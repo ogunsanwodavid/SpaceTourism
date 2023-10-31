@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-----------Important meta tags----------->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta property="og:description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta name="author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:image" content="https://github.com/ogunsanwodavid/FYLO/assets/images/favicon-32x32.png">
+    <meta property="og:title" content="SPACE: Destination">
+
+    <!-----------Title---------->
+    <title>SPACE: Destination</title>
+
+    <!------------Favicon------------->
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-------Linked stylesheets, fonts, icons and libraries------------>
+    <link rel="stylesheet" href="./dist/output.css">
+
+    <!----------Fontawesome icons---------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--------Google Fonts----------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Bellefair&display=swap" rel="stylesheet">
+
+    <!--Added styles-->
+    <style>
+        body{
+            background-image: url(./assets/images/destination/background-destination-mobile.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav a:hover{
+            border-bottom-color: #D0D6F9;
+        }
+
+        nav a:hover > .uppercase{
+            color:#D0D6F9;
+        }
+
+        nav a.border-b-2{
+            border-bottom-color: white !important;
+        }
+
+        nav a.border-b-2 > .uppercase{
+            color: white !important;
+        }
+
+        .ondest{
+            border-color: #fff !important;
+        }
+
+        #destination-selection a:hover{
+            border-bottom-color: #D0D6F9;
+        }
+
+        #destination-selection a.ondest:hover{
+            border-bottom-color: #fff !important;
+        }
+
+        #destination-selection a:hover > div{
+            color: #D0D6F9;
+        }
+
+        #destination-selection a.ondest:hover > div{
+            color: #fff !important;
+        }
+
+        #nav-menu{
+            transition: 0.3s all ease;
+        }
+
+        @media (min-width: 540px) {
+            body{
+                background-image: url(./assets/images/destination/background-destination-tablet.jpg);
+            }
+        }
+
+        @media (min-width: 870px) {
+            body{
+                background-image: url(./assets/images/destination/background-destination-desktop.jpg);
+            }
+        }
+    </style>
+
+    <!--Scripts-->
+   
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="relative p-8 flex justify-between items-center sm:pt-0 md:pt-8">
+        <!--Logo-->
+        <div>
+            <img src="./assets/images/shared/logo.svg" class="h-8" alt="">
+        </div>
+
+        <!--Nav list-->
+        <div class="hidden items-center max-w-max ml-auto space-x-6 px-10 pt-5 -mr-8 sm:flex sm:bg-white/[0.04] md:bg-gray-600 md:backdrop-filter md:backdrop-blur-sm md:bg-opacity-60 md:pl-20 md:pr-32 lg:pl-28 lg:pr-40">
+            <a href="index.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">00</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center pb-5 border-b-2 md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">01</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">02</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">03</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">TECHNOLOGY</div>
+            </a>
+
+            <div class="hidden absolute top-[50%] translate-x-[-320px] translate-y-[-50%] left-0 h-[0.5px] w-[350px] bg-gray-400 lg:block"></div>
+        </div>
+
+        <!--Hamburger-->
+        <div>
+            <img id="hamburger" src="./assets/images/shared/icon-hamburger.svg" class="h-5 sm:hidden" alt="#">
+        </div>
+    </nav>
+
+    <!--Nav Menu-->
+    <section id="nav-menu" class="fixed flex flex-col z-20 top-0 right-0 h-[100vh] w-[0] bg-white/[0.04] backdrop-blur-xl sm:hidden">
+        <!--Close menu icon-->
+        <img id="icon-close" src="./assets/images/shared/icon-close.svg" class="h-5 mt-8 mr-8 mb-8 ml-auto" alt="">
+
+        <!--Listed Nav Links-->
+        <div class="flex flex-col">
+            <a href="index.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">00</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-white">
+                <div class="font-barlowcondensed font-bold text-base text-white">01</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">02</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">03</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">TECHNOLOGY</div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const hambg = document.getElementById("hamburger");
+        const iconClose = document.getElementById("icon-close");
+        const navMenu = document.getElementById("nav-menu")
+
+        hambg.addEventListener('click' , () => {
+            navMenu.style.width = "210px"
+        });
+
+        iconClose.addEventListener('click' , () => {
+            navMenu.style.width = "0"
+        })
+    </script>
+
+    <!--Hero Section-->
+    <section id="hero">
+        <div class="flex flex-col px-8 md:px-36">
+            <!--Heading-->
+            <div class="flex justify-center items-center space-x-4 py-2 sm:justify-start">
+                <span class="text-gray-600 text-xl font-barlowcondensed font-bold">01</span>
+                <h2 class="text-white mx-auto text-xl font-medium font-barlowcondensed md:mx-0">PICK YOUR DESTINATION</h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row md:items-center md:space-x-10">
+                <!--Hero Image-->
+                <div class="py-4 md:w-1/2">
+                    <img id="hero-img" src="" class="h-40 w-40 mx-auto  sm:h-48 sm:w-48 md:w-56 md:h-56" alt="#">
+                </div>
+
+                <div class="flex flex-col md:w-1/2">
+                    <!--Destination Selection-->
+                    <div id="destination-selection" class="flex items-center justify-center py-4 space-x-4 md:justify-start">
+                        <a id="moon-btn" class="destination-select flex items-center pb-2 border-b-4 border-transparent" >
+                            <div class="font-barlowcondensed font-normal text-base text-white uppercase ">MOON</div>
+                        </a>
+                        <a id="mars-btn" class="destination-select flex items-center pb-2 border-b-4 border-transparent">
+                            <div class="font-barlowcondensed font-normal text-base text-white uppercase ">MARS</div>
+                        </a>
+                        <a id="europa-btn" class="destination-select flex items-center pb-2 border-b-4 border-transparent">
+                            <div class="font-barlowcondensed font-normal text-base text-white uppercase ">EUROPA</div>
+                        </a>
+                        <a id="titan-btn" class="destination-select flex items-center pb-2 border-b-4 border-transparent">
+                            <div class="font-barlowcondensed font-normal text-base text-white uppercase ">TITAN</div>
+                        </a>
+                    </div>
+
+                    <!--Destination Details-->
+                    <div class="flex flex-col pt-3">
+                        <!--Destination Name-->
+                        <h2 id="destination-name" class="text-white text-5xl font-medium font-bellefair text-center uppercase md:text-left">
+                            <!--<script>document.write(destinationJSON[0].name)</script>-->
+                        </h2>
+
+                        <!--Destination Description-->
+                        <p id="destination-description" class="text-[#D0D6F9] text-base text-center font-normal font-barlow pt-2 pb-8 border-[#383B4B] border-b-[1.2px] sm:max-w-[556px] sm:mx-auto md:text-left md:text-sm" style="line-height: 1.7">
+                            <!--<script>document.write(destinationJSON[0].description)</script>-->
+                        </p>
+
+                    </div>
+                    <div class="flex flex-col pt-3 pb-8 sm:flex-row sm:justify-center sm:space-x-24 md:justify-start">
+                        <!--Destination Distance-->
+                        <div class="flex flex-col py-3">
+                            <h3 class="text-[#D0D6F9] text-center text-lg font-medium font-barlowcondensed py-1 uppercase md:text-left md:text-base">AVG. DISTANCE</h3>
+                            <div id="destination-distance" class="text-white text-center text-2xl font-normal font-bellefair py-1 uppercase md:text-left md:text-xl">
+                                <!--<script>document.write(destinationJSON[0].distance)</script>-->
+                            </div>
+                        </div>
+
+                        <!--Destination Travel Time-->
+                        <div class="flex flex-col py-3">
+                            <h3 class="text-[#D0D6F9] text-center text-lg font-medium font-barlowcondensed py-1 uppercase md:text-left md:text-base">EST. TRAVEL TIME</h3>
+                            <div id="destination-travel" class="text-white text-center text-2xl font-normal font-bellefair py-1 uppercase md:text-left md:text-xl">
+                                <!--<script>document.write(destinationJSON[0].travel)</script>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!------Scripts---------->
+    <script>
+        const destinationJSON =
+            [
+                {
+                    "name": "Moon",
+                    "images": {
+                        "png": "./assets/images/destination/image-moon.png",
+                        "webp": "./assets/images/destination/image-moon.webp"
+                    },
+                    "description": "See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.",
+                    "distance": "384,400 km",
+                    "travel": "3 days"
+                },
+                {
+                    "name": "Mars",
+                    "images": {
+                        "png": "./assets/images/destination/image-mars.png",
+                        "webp": "./assets/images/destination/image-mars.webp"
+                    },
+                    "description": "Don’t forget to pack your hiking boots. You’ll need them to tackle Olympus Mons, the tallest planetary mountain in our solar system. It’s two and a half times the size of Everest!",
+                    "distance": "225 mil. km",
+                    "travel": "9 months"
+                },
+                {
+                    "name": "Europa",
+                    "images": {
+                        "png": "./assets/images/destination/image-europa.png",
+                        "webp": "./assets/images/destination/image-europa.webp"
+                    },
+                    "description": "The smallest of the four Galilean moons orbiting Jupiter, Europa is a winter lover’s dream. With an icy surface, it’s perfect for a bit of ice skating, curling, hockey, or simple relaxation in your snug wintery cabin.",
+                    "distance": "628 mil. km",
+                    "travel": "3 years"
+                },
+                {
+                    "name": "Titan",
+                    "images": {
+                        "png": "./assets/images/destination/image-titan.png",
+                        "webp": "./assets/images/destination/image-titan.webp"
+                    },
+                    "description": "The only moon known to have a dense atmosphere other than Earth, Titan is a home away from home (just a few hundred degrees colder!). As a bonus, you get striking views of the Rings of Saturn.",
+                    "distance": "1.6 bil. km",
+                    "travel": "7 years"
+                }
+            ];
+
+
+            function changeDest(i) {
+                const dests = document.getElementsByClassName("destination-select");
+                const activeDest = document.getElementsByClassName("destination-select").item(i);
+                const heroImg = document.getElementById("hero-img");
+                const destName = document.getElementById('destination-name');
+                const destDescription = document.getElementById('destination-description');
+                const destDistance = document.getElementById('destination-distance');
+                const destTravel = document.getElementById('destination-travel')
+
+                heroImg.src = destinationJSON[i].images.webp;
+                destName.innerHTML = destinationJSON[i].name;
+                destDescription.innerHTML = destinationJSON[i].description;
+                destDistance.innerHTML = destinationJSON[i].distance;
+                destTravel.innerHTML = destinationJSON[i].travel;
+
+
+                if (i = 0){
+                    dests.item(1).classList.remove('ondest')
+                    dests.item(2).classList.remove('ondest')
+                    dests.item(3).remove('ondest')
+                }
+
+                if (i = 1){
+                    dests.item(0).classList.remove('ondest')
+                    dests.item(2).classList.remove('ondest')
+                    dests.item(3).classList.remove('ondest')
+                }
+
+                if (i = 2){
+                    dests.item(0).classList.remove('ondest')
+                    dests.item(1).classList.remove('ondest')
+                    dests.item(3).classList.remove('ondest')
+                }
+
+                if (i = 3){
+                    dests.item(0).classList.remove('ondest')
+                    dests.item(1).classList.remove('ondest')
+                    dests.item(2).classList.remove('ondest')
+                }
+
+                activeDest.classList.add('ondest');
+            }
+
+            changeDest(0);
+
+           const moonBtn = document.getElementById("moon-btn");
+           const marsBtn = document.getElementById("mars-btn");
+           const europaBtn = document.getElementById("europa-btn");
+           const titanBtn = document.getElementById("titan-btn")
+
+           moonBtn.addEventListener('click' , () => {
+            changeDest(0);
+           })
+
+           marsBtn.addEventListener('click' , () => {
+            changeDest(1);
+           })
+
+           europaBtn.addEventListener('click' , () => {
+            changeDest(2);
+           })
+
+           titanBtn.addEventListener('click' , () => {
+            changeDest(3);
+           })
+
+           let slideindex = 0;
+            changeDest2();
+            function changeDest2() {
+                let i;
+                const dests = document.getElementsByClassName("destination-select");
+
+                for (i = 0; i < dests.length; i++) {
+                    changeDest(i)
+                }
+                slideindex++;
+                if(slideindex > dests.length){slideindex = 1}
+                changeDest(slideindex-1)
+                setTimeout(changeDest2 , 5000)
+            }
+           
+    </script>
+</body>

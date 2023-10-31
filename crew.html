@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-----------Important meta tags----------->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta property="og:description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta name="author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:image" content="https://github.com/ogunsanwodavid/FYLO/assets/images/favicon-32x32.png">
+    <meta property="og:title" content="SPACE: Crew">
+
+    <!-----------Title---------->
+    <title>SPACE: Crew</title>
+
+    <!------------Favicon------------->
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-------Linked stylesheets, fonts, icons and libraries------------>
+    <link rel="stylesheet" href="./dist/output.css">
+
+    <!----------Fontawesome icons---------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--------Google Fonts----------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Bellefair&display=swap" rel="stylesheet">
+
+    <!--Added styles-->
+    <style>
+        body{
+            background-image: url(./assets/images/crew/background-crew-mobile.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav a:hover{
+            border-bottom-color: #D0D6F9;
+        }
+
+        nav a:hover > .uppercase{
+            color:#D0D6F9;
+        }
+
+        nav a.border-b-2{
+            border-bottom-color: white !important;
+        }
+
+        nav a.border-b-2 > .uppercase{
+            color: white !important;
+        }
+
+        .dot{
+            cursor: pointer;
+        }
+
+        .active{
+            background-color: #fff;
+            height: 0.85rem;
+            width: 0.85rem;
+        }
+
+        #nav-menu{
+            transition: 0.3s all ease;
+        }
+
+        @media (min-width: 540px) {
+            body{
+                background-image: url(./assets/images/crew/background-crew-tablet.jpg);
+            }
+
+            .active{
+                height: 0.6rem;
+                width: 0.6rem;
+            }
+        }
+
+        @media (min-width: 870px) {
+            body{
+                background-image: url(./assets/images/crew/background-crew-desktop.jpg);
+            }
+        }
+    </style>
+
+    <!--Scripts-->
+   
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="relative p-8 flex justify-between items-center sm:pt-0 md:pt-8">
+        <!--Logo-->
+        <div>
+            <img src="./assets/images/shared/logo.svg" class="h-8" alt="">
+        </div>
+
+        <!--Nav list-->
+        <div class="hidden items-center max-w-max ml-auto space-x-6 px-10 pt-5 -mr-8 sm:flex sm:bg-white/[0.04] md:bg-gray-600 md:backdrop-filter md:backdrop-blur-sm md:bg-opacity-60 md:pl-20 md:pr-32 lg:pl-28 lg:pr-40">
+            <a href="index.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">00</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">01</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center pb-5 border-b-2 md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">02</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">03</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">TECHNOLOGY</div>
+            </a>
+
+            <div class="hidden absolute top-[50%] translate-x-[-320px] translate-y-[-50%] left-0 h-[0.5px] w-[350px] bg-gray-400 lg:block"></div>
+        </div>
+
+        <!--Hamburger-->
+        <div>
+            <img id="hamburger" src="./assets/images/shared/icon-hamburger.svg" class="h-5 sm:hidden" alt="#">
+        </div>
+    </nav>
+
+    <!--Nav Menu-->
+    <section id="nav-menu" class="fixed flex flex-col z-20 top-0 right-0 h-[100vh] w-[0] bg-white/[0.04] backdrop-blur-xl sm:hidden">
+        <!--Close menu icon-->
+        <img id="icon-close" src="./assets/images/shared/icon-close.svg" class="h-5 mt-8 mr-8 mb-8 ml-auto" alt="">
+
+        <!--Listed Nav Links-->
+        <div class="flex flex-col">
+            <a href="index.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">00</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">01</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-white">
+                <div class="font-barlowcondensed font-bold text-base text-white">02</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">03</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">TECHNOLOGY</div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const hambg = document.getElementById("hamburger");
+        const iconClose = document.getElementById("icon-close");
+        const navMenu = document.getElementById("nav-menu")
+
+        hambg.addEventListener('click' , () => {
+            navMenu.style.width = "210px"
+        });
+
+        iconClose.addEventListener('click' , () => {
+            navMenu.style.width = "0"
+        })
+    </script>
+
+    <!--Hero Section-->
+    <section id="hero">
+        <div class="flex flex-col px-8 md:px-36">
+            <!--Heading-->
+            <div class="flex justify-center items-center space-x-4 py-2 sm:justify-start">
+                <span class="text-gray-600 text-xl font-barlowcondensed font-bold">02</span>
+                <h2 class="text-white mx-auto text-xl font-medium font-barlowcondensed md:mx-0">MEET YOUR CREW</h2>
+            </div>
+
+            <div class="flex flex-col sm:flex-col-reverse md:flex-row-reverse md:items-center md:justify-between">
+                <!--Crew Member Image-->
+                <div class="border-gray-500 border-b-[1.2px] my-8 md:w-1/2 md:border-0">
+                    <img id="hero-img" class="w-52 h-[15.6rem] mx-auto sm:w-56 sm:h-[17rem] md:w-80 md:h-96 md:-mt-12" src="" alt="">
+                </div>
+                
+                <!--Crew Member Details-->
+                <div class="flex flex-col sm:flex-col-reverse md:w-1/2">
+                    <!--Slider dots-->
+                    <div class="flex justify-center items-center space-x-4 py-3 md:justify-start">
+                        <div id="dot-1" class="dot h-3 w-3 rounded-full bg-gray-600 hover:bg-gray-400 sm:h-2 sm:w-2"></div>
+                        <div id="dot-2" class="dot h-3 w-3 rounded-full bg-gray-600 hover:bg-gray-400 sm:h-2 sm:w-2"></div>
+                        <div id="dot-3" class="dot h-3 w-3 rounded-full bg-gray-600 hover:bg-gray-400 sm:h-2 sm:w-2"></div>
+                        <div id="dot-4" class="dot h-3 w-3 rounded-full bg-gray-600 hover:bg-gray-400 sm:h-2 sm:w-2"></div>
+                    </div>
+
+                    <!--Text Details-->
+                    <div class="flex flex-col py-3">
+                        <h2 id="crew-role" class="text-gray-400 text-center text-xl font-medium font-bellefair py-1 uppercase md:text-left"></h2>
+                        <h3 id="crew-name" class="text-white text-center text-2xl font-medium font-bellefair py-1 uppercase md:text-left"></h3>
+                        <p id="crew-bio" class="text-[#D0D6F9] text-base text-center font-normal font-barlow pt-2 pb-10 sm:max-w-[470px] sm:mx-auto md:text-left md:mx-0" style="line-height: 1.7;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <!---Scripts-->
+    <script>
+            const crewJSON = [
+            {
+                "name": "Douglas Hurley",
+                "images": {
+                    "png": "./assets/images/crew/image-douglas-hurley.png",
+                    "webp": "./assets/images/crew/image-douglas-hurley.webp"
+                },
+                "role": "Commander",
+                "bio": "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2."
+            },
+            {
+                "name": "Mark Shuttleworth",
+                "images": {
+                    "png": "./assets/images/crew/image-mark-shuttleworth.png",
+                    "webp": "./assets/images/crew/image-mark-shuttleworth.webp"
+                },
+                "role": "Mission Specialist",
+                "bio": "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist."
+            },
+            {
+                "name": "Victor Glover",
+                "images": {
+                    "png": "./assets/images/crew/image-victor-glover.png",
+                    "webp": "./assets/images/crew/image-victor-glover.webp"
+                },
+                "role": "Pilot",
+                "bio": "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer."
+            },
+            {
+                "name": "Anousheh Ansari",
+                "images": {
+                    "png": "./assets/images/crew/image-anousheh-ansari.png",
+                    "webp": "./assets/images/crew/image-anousheh-ansari.webp"
+                },
+                "role": "Flight Engineer",
+                "bio": "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space."
+            }
+        ];
+
+        function changeCrew(i) {
+
+            const dots = document.getElementsByClassName("dot");
+            const activeDot = document.getElementsByClassName("dot").item(i);
+            const heroImg = document.getElementById("hero-img");
+            const crewName = document.getElementById('crew-name');
+            const crewRole = document.getElementById('crew-role');
+            const crewBio = document.getElementById('crew-bio');
+
+            heroImg.src = crewJSON[i].images.webp;
+            crewName.innerHTML = crewJSON[i].name;
+            crewRole.innerHTML = crewJSON[i].role;
+            crewBio.innerHTML = crewJSON[i].bio;
+
+            if (i = 0){
+                dots.item(1).classList.remove('active')
+                dots.item(2).classList.remove('active')
+                dots.item(3).remove('active')
+            }
+
+            if (i = 1){
+                dots.item(0).classList.remove('active')
+                dots.item(2).classList.remove('active')
+                dots.item(3).classList.remove('active')
+            }
+
+            if (i = 2){
+                dots.item(0).classList.remove('active')
+                dots.item(1).classList.remove('active')
+                dots.item(3).classList.remove('active')
+            }
+
+            if (i = 3){
+                dots.item(0).classList.remove('active')
+                dots.item(1).classList.remove('active')
+                dots.item(2).classList.remove('active')
+            }
+
+            activeDot.classList.add('active');
+        }
+        changeCrew(0)
+        
+        dot1 = document.getElementById("dot-1")
+        dot2 = document.getElementById("dot-2")
+        dot3 = document.getElementById("dot-3")
+        dot4 = document.getElementById("dot-4")
+
+        dot1.addEventListener('click' , () => {
+            changeCrew(0);
+        })
+        dot2.addEventListener('click' , () => {
+            changeCrew(1);
+        })
+        dot3.addEventListener('click' , () => {
+            changeCrew(2);
+        })
+        dot4.addEventListener('click' , () => {
+            changeCrew(3);       
+        })
+
+        let slideindex = 0;
+        changeCrew2();
+        function changeCrew2() {
+            const dots = document.getElementsByClassName("dot");
+            let i;
+
+            for (i = 0; i < dots.length; i++) {
+                changeCrew(i)
+            }
+            slideindex++;
+            if(slideindex > dots.length){slideindex = 1}
+            changeCrew(slideindex-1)
+            setTimeout(changeCrew2 , 5000)
+        }
+
+    </script>
+</body>

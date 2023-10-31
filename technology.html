@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-----------Important meta tags----------->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta property="og:description" content="Junior Frontend Mentor Challenge to build a space tourism multi-page website">
+    <meta name="author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:author" content="Ogunsanwo David Oluwadamilare">
+    <meta property="og:image" content="https://github.com/ogunsanwodavid/FYLO/assets/images/favicon-32x32.png">
+    <meta property="og:title" content="SPACE: Technology">
+
+    <!-----------Title---------->
+    <title>SPACE: Technology</title>
+
+    <!------------Favicon------------->
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+
+    <!-------Linked stylesheets, fonts, icons and libraries------------>
+    <link rel="stylesheet" href="./dist/output.css">
+
+    <!----------Fontawesome icons---------->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <!--------Google Fonts----------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Bellefair&display=swap" rel="stylesheet">
+
+    <!--Added styles-->
+    <style>
+        body{
+            background-image: url(./assets/images/technology/background-technology-mobile.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        nav a:hover{
+            border-bottom-color: #D0D6F9;
+        }
+
+        nav a:hover > .uppercase{
+            color:#D0D6F9;
+        }
+
+        nav a.border-b-2{
+            border-bottom-color: white !important;
+        }
+
+        nav a.border-b-2 > .uppercase{
+            color: white !important;
+        }
+
+        .active{
+            border: 1.2px solid #fff;
+            background-color: #fff;
+            color:#000;
+            font-size: 0.875rem;
+        }
+
+        #nav-menu{
+            transition: 0.3s all ease;
+        }
+
+        @media (min-width: 540px) {
+            body{
+                background-image: url(./assets/images/technology/background-technology-tablet.jpg);
+            }
+        }
+
+        @media (min-width: 870px) {
+            body{
+                background-image: url(./assets/images/technology/background-technology-desktop.jpg);
+            }
+        }
+    </style>
+
+    <!--Scripts-->
+   
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="relative p-8 flex justify-between items-center sm:pt-0 md:pt-8">
+        <!--Logo-->
+        <div>
+            <img src="./assets/images/shared/logo.svg" class="h-8" alt="">
+        </div>
+
+        <!--Nav list-->
+        <div class="hidden items-center max-w-max ml-auto space-x-6 px-10 pt-5 -mr-8 sm:flex sm:bg-white/[0.04] md:bg-gray-600 md:backdrop-filter md:backdrop-blur-sm md:bg-opacity-60 md:pl-20 md:pr-32 lg:pl-28 lg:pr-40">
+            <a href="index.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">00</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">01</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center pb-5 border-2 border-transparent md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">02</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center pb-5 border-b-2 md:space-x-2">
+                    <div class="font-barlowcondensed font-bold text-base text-white hidden md:block">03</div>
+                    <div class="font-barlowcondensed font-normal text-sm text-white uppercase ">TECHNOLOGY</div>
+            </a>
+
+            <div class="hidden absolute top-[50%] translate-x-[-320px] translate-y-[-50%] left-0 h-[0.5px] w-[350px] bg-gray-400 lg:block"></div>
+        </div>
+
+        <!--Hamburger-->
+        <div>
+            <img id="hamburger" src="./assets/images/shared/icon-hamburger.svg" class="h-5 sm:hidden" alt="#">
+        </div>
+    </nav>
+
+    <!--Nav Menu-->
+    <section id="nav-menu" class="fixed flex flex-col z-20 top-0 right-0 h-[100vh] w-[0] bg-white/[0.04] backdrop-blur-xl sm:hidden">
+        <!--Close menu icon-->
+        <img id="icon-close" src="./assets/images/shared/icon-close.svg" class="h-5 mt-8 mr-8 mb-8 ml-auto" alt="">
+
+        <!--Listed Nav Links-->
+        <div class="flex flex-col">
+            <a href="index.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">00</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">HOME</div>
+            </a>
+            <a href="destination.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">01</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">DESTINATION</div>
+            </a>
+            <a href="crew.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-transparent">
+                <div class="font-barlowcondensed font-bold text-base text-white">02</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">CREW</div>
+            </a>
+            <a href="technology.html" class="flex items-center space-x-4 ml-6 mt-5 border-r-4 border-white">
+                <div class="font-barlowcondensed font-bold text-base text-white">03</div>
+                <div class="font-barlowcondensed font-normal text-base text-white uppercase">TECHNOLOGY</div>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        const hambg = document.getElementById("hamburger");
+        const iconClose = document.getElementById("icon-close");
+        const navMenu = document.getElementById("nav-menu")
+
+        hambg.addEventListener('click' , () => {
+            navMenu.style.width = "210px"
+        });
+
+        iconClose.addEventListener('click' , () => {
+            navMenu.style.width = "0"
+        })
+    </script>
+
+    <!--Hero Section-->
+    <section id="hero">
+        <div class="flex flex-col md:pl-36 md:mb-12">
+            <!--Heading-->
+            <div class="flex justify-center items-center space-x-4 py-2 pl-8 sm:justify-start md:pl-0">
+                <span class="text-gray-600 text-xl font-barlowcondensed font-bold">03</span>
+                <h2 class="text-white mx-auto text-xl font-medium font-barlowcondensed md:mx-0">SPACE LAUNCH 101</h2>
+            </div>
+
+            <div class="flex flex-col md:flex-row-reverse md:items-center md:justify-between" >
+                <!--Image-->
+                <div class="w-full my-4 md:w-[330px]">
+                    <img  id="hero-img-landscape" class="w-full align-top md:hidden" src="" alt="">
+                    <img  id="hero-img-portrait" class="hidden md:inline-block" src="" alt="">
+                </div>
+
+                <!--Launch Details-->
+                <div class="flex flex-col md:w-2/3 md:flex-row">
+                    <!--Slider Control-->
+                    <div class="flex space-x-4 justify-center items-center md:flex-col md:space-x-0 md:space-y-4">
+                        <div id="ctrl-1" class="launch-ctrl flex items-center justify-center w-8 h-8 border-gray-600 border-[1.2px] text-white rounded-full hover:border-white md:w-10 md:h-10">1</div>
+                        <div id="ctrl-2" class="launch-ctrl flex items-center justify-center w-8 h-8 border-gray-600 border-[1.2px]  text-white text-xs rounded-full hover:border-white md:w-10 md:h-10">2</div>
+                        <div id="ctrl-3" class="launch-ctrl flex items-center justify-center w-8 h-8 border-gray-600 border-[1.2px]  text-white text-xs rounded-full hover:border-white md:w-10 md:h-10">3</div>
+                    </div>
+
+                    <!--Text Details-->
+                    <div class="flex flex-col px-8">
+                        <h2 class="text-[#D0D6F9] text-sm text-center font-normal font-barlow uppercase pt-4  pb-1 md:text-left md:text-lg">THE TERMINOLOGY...</h2>
+                        <h3 id="launch-name" class="text-white text-center text-2xl font-medium font-bellefair py-1 uppercase md:text-left md:text-5xl"></h3>
+                        <p id="launch-description" class="text-[#D0D6F9] text-base text-center font-normal font-barlow sm:max-w-[470px] sm:mx-auto pt-2 pb-14 md:text-left md:text-sm md:max-w-[430px] md:pb-0" style="line-height: 1.7;"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!---Scripts-->
+    <script>
+        const launchJSON = [
+        {
+            "name": "Launch vehicle",
+            "images": {
+                "portrait": "./assets/images/technology/image-launch-vehicle-portrait.jpg",
+                "landscape": "./assets/images/technology/image-launch-vehicle-landscape.jpg"
+            },
+            "description": "A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
+        },
+        {
+            "name": "Spaceport",
+            "images": {
+                "portrait": "./assets/images/technology/image-spaceport-portrait.jpg",
+                "landscape": "./assets/images/technology/image-spaceport-landscape.jpg"
+            },
+            "description": "A spaceport or cosmodrome is a site for launching (or receiving) spacecraft, by analogy to the seaport for ships or airport for aircraft. Based in the famous Cape Canaveral, our spaceport is ideally situated to take advantage of the Earth’s rotation for launch."
+        },
+        {
+            "name": "Space capsule",
+            "images": {
+                "portrait": "./assets/images/technology/image-space-capsule-portrait.jpg",
+                "landscape": "./assets/images/technology/image-space-capsule-landscape.jpg"
+            },
+            "description": "A space capsule is an often-crewed spacecraft that uses a blunt-body reentry capsule to reenter the Earth's atmosphere without wings. Our capsule is where you'll spend your time during the flight. It includes a space gym, cinema, and plenty of other activities to keep you entertained."
+        }
+    ];
+
+
+    function changeLaunch(i) {
+        const launchCtrls = document.getElementsByClassName("launch-ctrl");
+        const activeCtrl = document.getElementsByClassName("launch-ctrl").item(i);
+        const heroImgPortrait = document.getElementById("hero-img-portrait");
+        const heroImgPLandscape = document.getElementById("hero-img-landscape");
+        const launchName = document.getElementById("launch-name");
+        const launchDescription = document.getElementById("launch-description");
+
+        heroImgPortrait.src = launchJSON[i].images.portrait
+        heroImgPLandscape.src = launchJSON[i].images.landscape
+        launchName.innerHTML = launchJSON[i].name
+        launchDescription.innerHTML = launchJSON[i].description
+
+        if (i = 0){
+            launchCtrls.item(1).classList.remove('active')
+            launchCtrls.item(2).classList.remove('active')
+        }
+
+        if (i = 1){
+            launchCtrls.item(0).classList.remove('active')
+            launchCtrls.item(2).classList.remove('active')
+        }
+
+        if (i = 2){
+            launchCtrls.item(0).classList.remove('active')
+            launchCtrls.item(1).classList.remove('active')
+        }
+
+        activeCtrl.classList.add('active')
+    }
+    changeLaunch(0);
+
+    ctrl1 = document.getElementById("ctrl-1")
+    ctrl2 = document.getElementById("ctrl-2")
+    ctrl3 = document.getElementById("ctrl-3")
+
+    ctrl1.addEventListener('click' , () => {
+        changeLaunch(0)
+    })
+
+    ctrl2.addEventListener('click' , () => {
+        changeLaunch(1)
+    })
+
+    ctrl3.addEventListener('click' , () => {
+        changeLaunch(2)
+    })
+
+    let slideindex = 0;
+    changeLaunch2();
+    function changeLaunch2() {
+        const launchCtrls = document.getElementsByClassName("launch-ctrl");
+        let i;
+
+        for (i = 0; i < launchCtrls.length; i++) {
+            changeLaunch(i)
+        }
+        slideindex++;
+        if(slideindex > launchCtrls.length){slideindex = 1}
+        changeLaunch(slideindex-1)
+        setTimeout(changeLaunch2 , 5000)
+    }
+    </script>
+</body>
